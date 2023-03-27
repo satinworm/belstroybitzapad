@@ -7,9 +7,10 @@ export const Footer = () => {
   const location = useLocation()
   const isMainPage = location.pathname === '/'
   const isPipePage = location.pathname.includes('electrical-works/xl-pipe')
-  const isElectricPage = location.pathname.includes(
-    'electrical-works/ElectricianServices'
-  )
+  const isElectricPage =
+    location.pathname.includes('electrical-works/ElectricianServices') ||
+    location.pathname.includes('electrical-works/Heaters')
+  const isHeaterPage = location.pathname.includes('electrical-works/Heaters')
 
   return (
     <footer
@@ -20,11 +21,11 @@ export const Footer = () => {
     >
       <div className='container relative flex justify-between px-5 pt-16 pb-7'>
         <div className='w-1/3'>
-          {!isPipePage && (
+          {!isPipePage && !isHeaterPage && (
             <div className='absolute -left-6 top-5 flex items-center'>
               <h2
                 className={clsx(
-                  'text-7xl font-bold uppercase text-white/5',
+                  'z-[40] text-7xl font-bold uppercase text-white/5',
                   isElectricPage && 'text-[#f2f2f2]'
                 )}
               >

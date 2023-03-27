@@ -1,28 +1,38 @@
-import { NavLink } from "react-router-dom";
-import clsx from "clsx";
+import { NavLink, useLocation } from 'react-router-dom'
+import clsx from 'clsx'
 
 type Props = {
-  link: string;
-  label: string;
-};
+  link: string
+  label: string
+}
 
 export const HeaderLink = (props: Props) => {
-  const { link, label } = props;
-
+  const location = useLocation()
+  const isMainPage = location.pathname === '/'
+  const isPipePage = location.pathname.includes('electrical-works/xl-pipe')
+  const isElectricPage = location.pathname.includes(
+    'electrical-works/ElectricianServices'
+  )
+  const { link, label } = props
+  const textColor =
+    (isMainPage && 'text-accent') ||
+    (isPipePage && 'text-xl-accent') ||
+    (isElectricPage && 'text-accent')
   return (
     <NavLink
       className={({ isActive }) =>
         clsx(
-          "text-lg border-b-2 pb-2",
+          'border-b-2 pb-2 text-lg',
           isActive
-            ? "text-accent font-medium border-b-accent"
-            : "text-white font-base border-b-transparent"
+            ? `border-b-accent font-medium`
+            : 'font-base border-b-transparent text-white'
         )
       }
       to={link}
+      style={{ color: textColor }}
       end
     >
       {label}
     </NavLink>
-  );
-};
+  )
+}

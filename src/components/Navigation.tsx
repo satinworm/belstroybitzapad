@@ -26,6 +26,12 @@ const namesForLinks = [
     path: 'ElectricianServices',
     isLink: true,
     to: '/electrical-works/ElectricianServices'
+  },
+  {
+    name: 'Обогреватели',
+    path: 'Heaters',
+    isLink: true,
+    to: '/electrical-works/Heaters'
   }
 ]
 

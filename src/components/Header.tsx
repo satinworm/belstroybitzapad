@@ -48,11 +48,15 @@ const navLinks = [
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const location = useLocation()
-  const pathname = location.pathname
-  const isMainPage = pathname === '/'
-  const isPipePage = location.pathname.includes('pipe')
-  const isElectricPage = location.pathname.includes('electric')
-
+  const isMainPage = location.pathname === '/'
+  const isPipePage = location.pathname.includes('electrical-works/xl-pipe')
+  const isElectricPage =
+    location.pathname.includes('electrical-works/ElectricianServices') ||
+    location.pathname.includes('electrical-works/Heaters')
+  const textColor =
+    (isMainPage && 'accent') ||
+    (isPipePage && 'xl-accent') ||
+    (isElectricPage && 'accent')
   return (
     <>
       <header className='absolute top-0 left-0 z-10 w-full bg-transparent py-8'>
@@ -93,54 +97,56 @@ export const Header = () => {
               </div>
             </div>
           </div>
-          <nav className='relative mt-6 hidden w-full justify-evenly lg:flex'>
-            <Popover className=''>
-              {({ open, close }) => (
-                <>
-                  <Popover.Button
-                    className={`
+          <div className='container flex max-w-[1280px] flex-col justify-center'>
+            <nav className='relative mt-6 hidden w-full justify-between lg:flex'>
+              <Popover className='relative'>
+                {({ open, close }) => (
+                  <>
+                    <Popover.Button
+                      className={`
                 ${
                   open
-                    ? 'border-b-accent font-medium text-accent'
+                    ? `border-b-${textColor} font-medium text-${textColor}`
                     : 'font-base border-b-transparent text-white'
                 }
                 group flex items-center border-b-2 pb-2 text-lg focus:outline-none`}
-                  >
-                    <span>Услуги</span>
-                    <ChevronDownIcon
-                      className={`${
-                        open
-                          ? 'rotate-180 border-b-accent font-medium text-accent'
-                          : 'text-opacity-70'
-                      }
+                    >
+                      <span>Услуги</span>
+                      <ChevronDownIcon
+                        className={`${
+                          open
+                            ? `rotate-180 border-b-${textColor} font-medium text-${textColor}`
+                            : 'text-opacity-70'
+                        }
                   ml-2 h-5 w-5 transition duration-150 ease-in-out group-hover:text-opacity-80`}
-                      aria-hidden='true'
-                    />
-                  </Popover.Button>
-                  <Transition
-                    as={Fragment}
-                    enter='transition ease-out duration-200'
-                    enterFrom='opacity-0 -translate-y-1'
-                    enterTo='opacity-100 translate-y-0'
-                    leave='transition ease-in duration-150'
-                    leaveFrom='opacity-100 translate-y-0'
-                    leaveTo='opacity-0 -translate-y-1'
-                  >
-                    <Popover.Panel className='absolute z-10 mt-3 w-screen -translate-x-[10%] transform bg-white px-4 sm:px-0 lg:max-w-3xl'>
-                      <div className='overflow-hidden rounded-lg px-8 py-5 text-black shadow-lg'>
-                        <Services close={close} />
-                      </div>
-                    </Popover.Panel>
-                  </Transition>
-                </>
-              )}
-            </Popover>
-            {navLinks.map(link => (
-              <HeaderLink {...link} key={link.id} />
-            ))}
-          </nav>
-          <div>
+                        aria-hidden='true'
+                      />
+                    </Popover.Button>
+                    <Transition
+                      as={Fragment}
+                      enter='transition ease-out duration-200'
+                      enterFrom='opacity-0 -translate-y-1'
+                      enterTo='opacity-100 translate-y-0'
+                      leave='transition ease-in duration-150'
+                      leaveFrom='opacity-100 translate-y-0'
+                      leaveTo='opacity-0 -translate-y-1'
+                    >
+                      <Popover.Panel className='absolute z-10 mt-3 w-screen -translate-x-[10%] transform bg-white px-4 sm:px-0 lg:max-w-3xl'>
+                        <div className='overflow-hidden rounded-lg px-8 py-5 text-black shadow-lg'>
+                          <Services close={close} />
+                        </div>
+                      </Popover.Panel>
+                    </Transition>
+                  </>
+                )}
+              </Popover>
+              {navLinks.map(link => (
+                <HeaderLink {...link} key={link.id} />
+              ))}
+            </nav>
+            {/*<div className={'absolute'}>*/}
             <Navigation />
+            {/*</div>*/}
           </div>
         </div>
       </header>

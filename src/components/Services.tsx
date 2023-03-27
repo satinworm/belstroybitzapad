@@ -37,7 +37,8 @@ export const serviceCategories = [
       {
         name: 'Услуги электрика',
         link: 'electrical-works/ElectricianServices'
-      }
+      },
+      { name: 'Обогреватели', link: 'electrical-works/Heaters' }
     ]
   },
   {

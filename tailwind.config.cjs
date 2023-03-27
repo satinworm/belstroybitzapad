@@ -24,6 +24,7 @@ module.exports = {
         "nature-bg": "url('/nature-bg.svg')",
         "xl-pipe-bg": "url('/xl-pipe-bg.webp')",
         "electrician-bg": "url('/electrician-bg.png')",
+        'heater-bg': "url('/heater-bg.png')",
       },
       fontSize: {
         xxs: ".68rem",

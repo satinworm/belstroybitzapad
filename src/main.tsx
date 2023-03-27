@@ -8,6 +8,7 @@ import { TopScroller } from './components/TopScroller'
 import { Footer } from './components/Footer'
 import { XLPipePage } from './pages/xl-pipe'
 import { ElectricianServices } from './pages/electric'
+import { Heater } from './pages/heater'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             path='/electrical-works/ElectricianServices'
             element={<ElectricianServices />}
           />
+          <Route path={'/electrical-works/Heaters'} element={<Heater />} />
           <Route
             path='*'
             element={
