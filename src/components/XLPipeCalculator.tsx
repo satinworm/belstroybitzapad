@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { drawLine } from '../utils/canvas'
+import Calculator from './Calculator'
 
 export const XLPipeCalculator = () => {
   return (
@@ -8,7 +9,7 @@ export const XLPipeCalculator = () => {
         // id={'XLPipeCalculatorSection'}
         className='relative z-[5] w-full bg-xl-bg'
       >
-        <div className='relative z-[5] h-[1200px] w-full bg-xl-bg pt-16'>
+        <div className='relative z-[5] h-[1130px] w-full bg-xl-bg pt-16'>
           <div
             id={'XLPipeCalculatorSection'}
             style={{ transformStyle: 'preserve-3d' }}
@@ -22,6 +23,7 @@ export const XLPipeCalculator = () => {
               учетом индивидуальных параметров объекта. Для этого заполните
               указанные ниже поля и отправьте заявку на расчет.
             </h3>
+            <Calculator />
           </div>
         </div>
       </section>

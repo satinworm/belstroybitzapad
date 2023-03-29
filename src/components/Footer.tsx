@@ -19,13 +19,13 @@ export const Footer = () => {
         (isPipePage || isElectricPage) && '!bg-white'
       )}
     >
-      <div className='container relative flex justify-between px-5 pt-16 pb-7'>
-        <div className='w-1/3'>
+      <div className='relative flex flex-col justify-between pb-7 pt-12 lg:container lg:flex-row lg:px-5 lg:pt-16'>
+        <div className='w-full px-2 pb-14 lg:w-1/3 lg:px-0'>
           {!isPipePage && !isHeaterPage && (
-            <div className='absolute -left-6 top-5 flex items-center'>
+            <div className='absolute top-5 left-1 flex items-center lg:-left-4'>
               <h2
                 className={clsx(
-                  'z-[40] text-7xl font-bold uppercase text-white/5',
+                  'z-[40] text-4xl font-bold uppercase text-white/5 lg:text-7xl',
                   isElectricPage && 'text-[#f2f2f2]'
                 )}
               >
@@ -39,16 +39,16 @@ export const Footer = () => {
 
           <div
             className={clsx(
-              'mt-12 flex flex-col gap-5 text-2xl text-[#E8E8E8]',
+              'flex flex-col text-2xl text-[#E8E8E8] lg:mt-12 lg:gap-5',
               isPipePage && 'text-xl-accent',
               isElectricPage && 'text-[#000001]'
             )}
           >
-            <span className='block font-medium tracking-[-0.035em]'>
+            <span className='hidden font-medium tracking-[-0.035em] lg:block'>
               Контакты
             </span>
             {!isPipePage && !isElectricPage && (
-              <span className='block'>Наш адрес:</span>
+              <span className='block whitespace-nowrap'>Наш адрес:</span>
             )}
           </div>
 
@@ -63,7 +63,7 @@ export const Footer = () => {
               isElectricPage && 'text-[#000001]'
             )}
           >
-            <div>
+            <div className=''>
               <img
                 src={
                   (isElectricPage && '/icons/location-yellow.svg') ||
@@ -72,7 +72,9 @@ export const Footer = () => {
                 }
                 alt='location'
               />
-              <span>г. Гродно ул. Пушкина д.13 оф. 20</span>
+              <span className='whitespace-nowrap'>
+                г. Гродно ул. Пушкина д.13 оф. 20
+              </span>
             </div>
             <div className='items-start'>
               <img
@@ -84,7 +86,9 @@ export const Footer = () => {
                 alt='call'
               />
               <div className='flex flex-col gap-2'>
-                <a href='tel:+375290000000'>+375 (29) 000-00-00</a>
+                <a href='tel:+375290000000' className='whitespace-nowrap'>
+                  +375 (29) 000-00-00
+                </a>
               </div>
             </div>
             <div>
@@ -96,7 +100,7 @@ export const Footer = () => {
                 }
                 alt='clock'
               />
-              <span>Пн-пт с 10.00 до 18.00</span>
+              <span className='whitespace-nowrap'>Пн-пт с 10.00 до 18.00</span>
             </div>
             <div>
               <img
@@ -107,7 +111,10 @@ export const Footer = () => {
                 }
                 alt='mail'
               />
-              <a href='mailto:belstroybutzapad@gmail.com'>
+              <a
+                href='mailto:belstroybutzapad@gmail.com'
+                className='whitespace-nowrap'
+              >
                 belstroybutzapad@gmail.com
               </a>
             </div>
@@ -119,7 +126,7 @@ export const Footer = () => {
           height='400'
           // frameBorder='1'
           allowFullScreen={true}
-          className='w-2/3'
+          className='w-screen lg:w-2/3'
         />
       </div>
     </footer>

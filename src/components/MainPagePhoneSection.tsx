@@ -22,16 +22,16 @@ export const MainPagePhoneSection = () => {
 
   return (
     <>
-      <section className='container mt-[90px]' id='phoneSection'>
-        <div className='flex w-full justify-between'>
-          <div className='w-1/2 p-20 '>
+      <section className='container mt-[60px] lg:mt-[90px]' id='phoneSection'>
+        <div className='flex w-full flex-col justify-between lg:flex-row'>
+          <div className='w-full p-3 text-black lg:w-1/2 lg:p-20 '>
             <h2
-              className='mb-10 w-fit whitespace-nowrap text-3xl font-semibold'
+              className='w-fit whitespace-nowrap text-xl font-semibold lg:mb-10 lg:text-3xl'
               id='phoneHeading'
             >
               Понравились наши работы ?
             </h2>
-            <div>
+            <div className='mt-2 lg:mt-0'>
               Для получения консультации достаточно лишь перейти в{' '}
               <span className='font-medium'>телеграм</span> или{' '}
               <span className='font-medium'>инстаграмм</span> по указанным
@@ -44,18 +44,40 @@ export const MainPagePhoneSection = () => {
               <span className='font-medium'>время</span> и{' '}
               <span className='font-medium'>деньги</span>!
             </div>
+            <div className='w-ful mt-5 flex items-center justify-center lg:hidden lg:w-1/3 lg:gap-[6rem]'>
+              <div className='mainPhoneSocial flex flex-row gap-8 lg:flex-col lg:gap-8'>
+                <img src='/icons/telegram-black.svg' alt='telegram' />
+                <img src='/icons/instagram-black.svg' alt='telegram' />
+                <img src='/icons/vk-black.svg' alt='telegram' />
+                <img src='/icons/facebook-black.svg' alt='telegram' />
+              </div>
+              <div className='relative'>
+                <MainPageBoxNumber
+                  number='05'
+                  id='phoneNumber'
+                  className='absolute left-0 top-[5rem]  mr-0 -translate-x-10'
+                />
+                <img
+                  src='/phone.svg'
+                  className='hidden lg:block'
+                  alt='phone'
+                  id='phoneContainer'
+                />
+              </div>
+            </div>
             <form
-              className='flex w-full max-w-[300px] flex-col gap-3'
+              className='flex w-full flex-col gap-3 lg:max-w-[300px]'
               onSubmit={handleSubmit(onSubmit)}
             >
-              <div className='mt-10 text-dark-gray'>
-                <span className='mb-2 block max-w-[200px] text-xs'>
+              <div className='mt-10 text-[#676767]'>
+                <span className='mb-2 block w-2/3 text-sm leading-tight lg:w-full  lg:text-base'>
                   <sup>*</sup>Получить консультацию вы можете уже сейчас просто
                   оставив заявку в один клик
                 </span>
                 <input
                   type='text'
                   className='bg-[#EEEEEE] text-black'
+                  placeholder={'Ваш номер телефона'}
                   {...register('phoneNumber', { required: true })}
                 />
               </div>
@@ -68,8 +90,8 @@ export const MainPagePhoneSection = () => {
               </button>
             </form>
           </div>
-          <div className='flex w-1/3 items-center gap-[6rem]'>
-            <div className='mainPhoneSocial flex flex-col gap-8'>
+          <div className='w-ful hidden items-center lg:flex lg:w-1/3 lg:gap-[6rem]'>
+            <div className='mainPhoneSocial flex flex-row gap-4 lg:flex-col lg:gap-8'>
               <img src='/icons/telegram-black.svg' alt='telegram' />
               <img src='/icons/instagram-black.svg' alt='telegram' />
               <img src='/icons/vk-black.svg' alt='telegram' />
@@ -81,7 +103,12 @@ export const MainPagePhoneSection = () => {
                 id='phoneNumber'
                 className='absolute left-0 top-[5rem]  mr-0 -translate-x-10'
               />
-              <img src='/phone.svg' alt='phone' id='phoneContainer' />
+              <img
+                src='/phone.svg'
+                className='hidden lg:block'
+                alt='phone'
+                id='phoneContainer'
+              />
             </div>
           </div>
         </div>

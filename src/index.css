@@ -13,7 +13,7 @@
     @apply w-[32px] h-[32px];
   }
   .main-advantages > div > img {
-    @apply w-[40px] h-[40px];
+    @apply lg:w-[40px] lg:h-[40px] w-[22px] h-[22px];
   }
   .main-advantages > div > span {
     @apply text-black;
@@ -106,6 +106,31 @@
   }
   .bgElectricianAbout {
     background: linear-gradient(180deg, #9DA2A6 0%, #A7ACB0 18.51%, #B0B7BF 53.95%, #ACB4BF 74.91%, #ABB5BF 100%);
+  }
+  #calcInput_1 {
+    position: absolute;
+    top: 300px;
+    left: 420px;
+  }
+  #calcInput_2 {
+    position: absolute;
+    top: 365px;
+    left: 120px;
+  }
+  #calcInput_3 {
+    position: absolute;
+    top: 575px;
+    left: 165px;
+  }
+  #calcInput_4 {
+    position: absolute;
+    top: 540px;
+    left: 440px;
+  }
+  #calcInput_5 {
+    position: absolute;
+    top: 130px;
+    left: 100px;
   }
 
 }

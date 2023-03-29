@@ -60,18 +60,23 @@ export const Header = () => {
   return (
     <>
       <header className='absolute top-0 left-0 z-10 w-full bg-transparent py-8'>
-        <div className='container'>
+        <div className='container px-[15px]'>
           <div className='flex items-center justify-between'>
             <div className='flex items-center gap-[120px]'>
               <NavLink to='/'>
-                <img src='/logo.svg' alt='logo' className='h-[80px] w-[80px]' />
+                <img
+                  src='/logo.svg'
+                  alt='logo'
+                  className='lg:h-[80px] lg:w-[80px] h-[30px] w-[30px]'
+                />
               </NavLink>
               <span className='lg:show hidden max-w-[200px] text-xxs text-dark-gray'>
                 Строительная компания. Работаем с 9999 года. Выполнили 400+
                 проектов. Штатные специалисты с опытом 8+ лет
               </span>
             </div>
-            <div className='hidden items-center gap-5 text-dark-gray lg:flex'>
+
+            <div className='lg:flex hidden items-center gap-5 text-dark-gray'>
               <div className='flex items-center gap-3'>
                 <span className='max-w-[95px] text-right text-xs'>
                   Пишите, мы онлайн:
@@ -98,7 +103,7 @@ export const Header = () => {
             </div>
           </div>
           <div className='container flex max-w-[1280px] flex-col justify-center'>
-            <nav className='relative mt-6 hidden w-full justify-between lg:flex'>
+            <nav className='lg:flex relative mt-6 hidden w-full justify-between'>
               <Popover className='relative'>
                 {({ open, close }) => (
                   <>
@@ -131,7 +136,7 @@ export const Header = () => {
                       leaveFrom='opacity-100 translate-y-0'
                       leaveTo='opacity-0 -translate-y-1'
                     >
-                      <Popover.Panel className='absolute z-10 mt-3 w-screen -translate-x-[10%] transform bg-white px-4 sm:px-0 lg:max-w-3xl'>
+                      <Popover.Panel className='sm:px-0 lg:max-w-3xl absolute z-10 mt-3 w-screen -translate-x-[10%] transform bg-white px-4'>
                         <div className='overflow-hidden rounded-lg px-8 py-5 text-black shadow-lg'>
                           <Services close={close} />
                         </div>

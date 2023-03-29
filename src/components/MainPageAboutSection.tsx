@@ -1,23 +1,23 @@
-import { MainPageHeading } from "./MainPageHeading";
-import { ServiceListed } from "./ServiceListed";
+import { MainPageHeading } from './MainPageHeading'
+import { ServiceListed } from './ServiceListed'
 
 export const MainPageAboutSection = () => {
   return (
     <section
-      className="mt-[90px] bg-nature-bg bg-norepeat bg-cover"
-      id="aboutSection"
+      className='bg-norepeat mt-[90px] bg-nature-bg bg-cover'
+      id='aboutSection'
     >
-      <div className="container">
+      <div className='container'>
         <MainPageHeading
-          title="about"
-          subtitle="О компании"
-          number="02"
-          position="right"
-          id="aboutHeading"
-          className="-translate-y-2/3"
+          title='about'
+          subtitle='О компании'
+          number='02'
+          position='right'
+          id='aboutHeading'
+          className='-translate-y-2/3'
         />
-        <div className="p-[100px]">
-          <div className="w-2/3 p-5 bg-white/80 text-black ml-auto text-lg">
+        <div className='py-[30px] pl-[30px] lg:p-[100px]'>
+          <div className='ml-auto bg-white/80 p-2 text-[11px] text-black lg:w-2/3 lg:p-5 lg:text-lg'>
             Компания ООО «Белстройбитзапад» основана в 2006 году как
             организация, основной сферой деятельности которой является
             строительство жилых, офисных, торговых зданий.
@@ -39,5 +39,5 @@ export const MainPageAboutSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
