@@ -42,7 +42,7 @@ const Navigation: React.FC<NavigationProps> = props => {
     const pathArray = pathname.split('/').filter(path => path !== '')
 
     return (
-      <div className='breadcrumb flex space-x-2'>
+      <div className='breadcrumb hidden space-x-2 lg:flex'>
         {pathArray.length >= 1 && (
           <div className={'flex items-center gap-2 font-medium text-white'}>
             <NavLink to='/'>Главная</NavLink>

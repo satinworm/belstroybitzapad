@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { drawLine, getOffset } from '../utils/canvas'
 import { createLogger } from 'vite'
 
-export const MainPageCanvas = () => {
+export const MainPageCanvasMobile = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -62,10 +62,11 @@ export const MainPageCanvas = () => {
 
         const advantagesHeading =
           document.querySelector<HTMLElement>('#advantagesHeading')!
-        const footerContacts =
-          document.querySelector<HTMLElement>('#footerContacts')!
+        const aboutText = document.querySelector<HTMLElement>('#aboutText')!
 
         const footer = document.querySelector<HTMLElement>('footer')!
+        const footerContacts =
+          document.querySelector<HTMLElement>('#footerContacts')!
 
         const servicesOffset = services ? getOffset(services) : null
         const servicesSectionOffset = getOffset(servicesSection)
@@ -85,6 +86,7 @@ export const MainPageCanvas = () => {
 
         const advantagesSectionOffset = getOffset(advantagesSection)
         const advantagesHeadingOffset = getOffset(advantagesHeading)
+        const aboutTextOffset = getOffset(aboutText)
 
         const footerOffset = getOffset(footer)
         const footerContactsOffset = getOffset(footerContacts)
@@ -92,70 +94,58 @@ export const MainPageCanvas = () => {
         drawLine(
           ctx,
           [
-            servicesHeadingOffset.left + servicesHeadingOffset.width,
+            servicesHeadingOffset.right,
             servicesHeadingOffset.top + servicesHeadingOffset.height / 2
           ],
           [
-            servicesSectionOffset.left + servicesSectionOffset.width + 30,
-            servicesSectionOffset.top + servicesHeadingOffset.height / 2
-          ]
-        )
-
-        drawLine(
-          ctx,
-          [
-            servicesSectionOffset.left + servicesSectionOffset.width + 30,
+            aboutHeadingOffset.left,
             servicesSectionOffset.top + servicesHeadingOffset.height / 2
           ],
-          [
-            servicesSectionOffset.left + servicesSectionOffset.width + 30,
-            aboutSectionOffset.top - aboutHeadingOffset.height - 5
-          ]
+          '#676767'
         )
-
         drawLine(
           ctx,
-          [aboutSectionOffset.left + 250, aboutSectionOffset.top],
           [
-            aboutSectionOffset.left + 250,
-            aboutSectionOffset.top + aboutSectionOffset.height
+            aboutHeadingOffset.left,
+            servicesSectionOffset.top + servicesHeadingOffset.height / 2
           ],
-          'white'
+          [aboutHeadingOffset.left, aboutHeadingOffset.top - 20],
+          '#676767'
         )
 
         drawLine(
           ctx,
-          [
-            aboutSectionOffset.left + 250,
-            aboutSectionOffset.top + aboutSectionOffset.height
-          ],
-          [aboutSectionOffset.left + 250, schemeHeadingOffset.top]
+          [aboutHeadingOffset.left - 60, aboutHeadingOffset.top - 2],
+          [aboutTextOffset.left, aboutHeadingOffset.top - 2],
+          '#676767'
         )
-
+        drawLine(
+          ctx,
+          [aboutTextOffset.left, aboutHeadingOffset.top - 2],
+          [aboutTextOffset.left, schemeHeadingOffset.top],
+          '#676767'
+        )
         drawLine(
           ctx,
           [
-            schemeHeadingOffset.left + schemeHeadingOffset.width,
-            schemeHeadingOffset.height / 2 + schemeHeadingOffset.top
-          ],
-          [
-            portfolioHeadingOffset.left + portfolioHeadingOffset.width / 2,
-            schemeHeadingOffset.top + schemeHeadingOffset.height / 2
-          ]
-        )
-
-        drawLine(
-          ctx,
-          [
-            portfolioHeadingOffset.left + portfolioHeadingOffset.width / 2,
+            schemeHeadingOffset.right,
             schemeHeadingOffset.top + schemeHeadingOffset.height / 2
           ],
           [
-            portfolioHeadingOffset.left + portfolioHeadingOffset.width / 2,
-            portfolioHeadingOffset.top
-          ]
+            portfolioHeadingOffset.right - 20,
+            schemeHeadingOffset.top + schemeHeadingOffset.height / 2
+          ],
+          '#676767'
         )
-
+        drawLine(
+          ctx,
+          [
+            portfolioHeadingOffset.right - 20,
+            schemeHeadingOffset.top + schemeHeadingOffset.height / 2
+          ],
+          [portfolioHeadingOffset.right - 20, portfolioHeadingOffset.top],
+          '#676767'
+        )
         drawLine(
           ctx,
           [
@@ -163,178 +153,73 @@ export const MainPageCanvas = () => {
             portfolioHeadingOffset.top + portfolioHeadingOffset.height / 2
           ],
           [
-            portfolioListOffset.left + 70,
-            portfolioHeadingOffset.top + portfolioHeadingOffset.height / 2
-          ]
-        )
-
-        drawLine(
-          ctx,
-          [
-            portfolioListOffset.left + 70,
+            portfolioHeadingOffset.left - 5000,
             portfolioHeadingOffset.top + portfolioHeadingOffset.height / 2
           ],
-          [portfolioListOffset.left + 70, portfolioListOffset.top]
-        )
-
-        drawLine(
-          ctx,
-          [
-            portfolioListOffset.left + 70,
-            portfolioListOffset.top + portfolioListOffset.height
-          ],
-          [
-            portfolioListOffset.left + 70,
-            moreProjectsButtonOffset.top + moreProjectsButtonOffset.height / 2
-          ]
+          '#676767'
         )
         drawLine(
           ctx,
           [
-            portfolioListOffset.left + 70,
-            moreProjectsButtonOffset.top + moreProjectsButtonOffset.height / 2
-          ],
-          [
-            moreProjectsButtonOffset.left,
-            moreProjectsButtonOffset.top + moreProjectsButtonOffset.height / 2
-          ]
-        )
-        drawLine(
-          ctx,
-          [
-            moreProjectsButtonOffset.left + moreProjectsButtonOffset.width,
-            moreProjectsButtonOffset.top + moreProjectsButtonOffset.height / 2
-          ],
-          [
-            phoneContainerOffset.left + phoneContainerOffset.width / 2,
-            moreProjectsButtonOffset.top + moreProjectsButtonOffset.height / 2
-          ]
-        )
-        drawLine(
-          ctx,
-          [
-            phoneContainerOffset.left + phoneContainerOffset.width / 2,
-            moreProjectsButtonOffset.top + moreProjectsButtonOffset.height / 2
-          ],
-          [
-            phoneContainerOffset.left + phoneContainerOffset.width / 2,
-            phoneContainerOffset.top
-          ]
-        )
-
-        drawLine(
-          ctx,
-          [
-            phoneNumberOffset.left,
+            phoneHeadingOffset.left - 5000,
             phoneHeadingOffset.top + phoneHeadingOffset.height / 2
           ],
-          [
-            phoneHeadingOffset.left + phoneHeadingOffset.width,
-            phoneHeadingOffset.top + phoneHeadingOffset.height / 2
-          ]
-        )
-        // drawLine(
-        //   ctx,
-        //   [
-        //     phoneHeadingOffset.right,
-        //     phoneHeadingOffset.top + phoneHeadingOffset.height / 2
-        //   ],
-        //   [phoneContainerOffset.right, phoneContainerOffset.top]
-        // )
-
-        drawLine(
-          ctx,
           [
             phoneHeadingOffset.left,
             phoneHeadingOffset.top + phoneHeadingOffset.height / 2
           ],
-          [
-            phoneSectionOffset.left,
-            phoneHeadingOffset.top + phoneHeadingOffset.height / 2
-          ]
+          '#676767'
         )
-
         drawLine(
           ctx,
           [
-            phoneSectionOffset.left,
+            phoneHeadingOffset.right,
             phoneHeadingOffset.top + phoneHeadingOffset.height / 2
           ],
           [
-            phoneSectionOffset.left,
-            phoneButtonOffset.top + phoneButtonOffset.height / 2
-          ]
+            phoneButtonOffset.right + 10,
+            phoneHeadingOffset.top + phoneHeadingOffset.height / 2
+          ],
+          '#676767'
         )
-
         drawLine(
           ctx,
           [
-            phoneSectionOffset.left,
+            phoneButtonOffset.right + 10,
+            phoneHeadingOffset.top + phoneHeadingOffset.height / 2
+          ],
+          [
+            phoneButtonOffset.right + 10,
+            phoneButtonOffset.top + phoneButtonOffset.height / 2
+          ],
+          '#676767',
+          1
+        )
+        drawLine(
+          ctx,
+          [
+            phoneButtonOffset.right + 10,
             phoneButtonOffset.top + phoneButtonOffset.height / 2
           ],
           [
-            phoneButtonOffset.left,
-            phoneButtonOffset.top + phoneButtonOffset.height / 2
-          ]
-        )
-
-        drawLine(
-          ctx,
-          [
-            phoneButtonOffset.left + phoneButtonOffset.width,
+            phoneButtonOffset.left - 5000,
             phoneButtonOffset.top + phoneButtonOffset.height / 2
           ],
-          [
-            phoneContainerOffset.left,
-            phoneButtonOffset.top + phoneButtonOffset.height / 2
-          ]
+          '#676767',
+          1
         )
-
         drawLine(
           ctx,
           [
-            phoneContainerOffset.left + phoneContainerOffset.width / 2,
-            phoneContainerOffset.top + phoneContainerOffset.height
-          ],
-          [
-            phoneContainerOffset.left + phoneContainerOffset.width / 2,
-            advantagesHeadingOffset.top
-          ]
-        )
-
-        drawLine(
-          ctx,
-          [
-            advantagesHeadingOffset.left,
+            advantagesHeadingOffset.left - 1000,
             advantagesHeadingOffset.top + advantagesHeadingOffset.height / 2
           ],
           [
-            advantagesSectionOffset.left,
-            advantagesHeadingOffset.top + advantagesHeadingOffset.height / 2
-          ]
-        )
-
-        drawLine(
-          ctx,
-          [
-            advantagesSectionOffset.left,
+            advantagesHeadingOffset.left + 2,
             advantagesHeadingOffset.top + advantagesHeadingOffset.height / 2
           ],
-          [advantagesSectionOffset.left, footerOffset.top]
-        )
-        drawLine(
-          ctx,
-          [
-            advantagesSectionOffset.left,
-            advantagesHeadingOffset.top + advantagesHeadingOffset.height / 2
-          ],
-          [advantagesSectionOffset.left, footerOffset.top]
-        )
-        drawLine(
-          ctx,
-          [advantagesSectionOffset.left, footerOffset.top],
-          [advantagesSectionOffset.left, footerOffset.top + 25],
-          'white'
+          '#676767',
+          1
         )
         drawLine(
           ctx,
@@ -343,7 +228,7 @@ export const MainPageCanvas = () => {
             footerContactsOffset.top + footerContactsOffset.height / 2
           ],
           [
-            advantagesSectionOffset.right,
+            advantagesSectionOffset.right - 20,
             footerContactsOffset.top + footerContactsOffset.height / 2
           ],
           'white'
@@ -351,10 +236,10 @@ export const MainPageCanvas = () => {
         drawLine(
           ctx,
           [
-            advantagesSectionOffset.right,
+            advantagesSectionOffset.right - 20,
             footerContactsOffset.top + footerContactsOffset.height / 2
           ],
-          [advantagesSectionOffset.right, footerContactsOffset.top + 1000],
+          [advantagesSectionOffset.right - 20, footerContactsOffset.top + 1000],
           'white'
         )
       }
@@ -371,7 +256,7 @@ export const MainPageCanvas = () => {
   return (
     <canvas
       ref={canvasRef}
-      className='pointer-events-none absolute top-0 left-0 z-20 hidden lg:block'
+      className='z-9 pointer-events-none absolute top-0 left-0 lg:hidden'
     />
   )
 }

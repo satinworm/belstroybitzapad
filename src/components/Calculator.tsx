@@ -61,13 +61,15 @@ const Calculator: FC = () => {
         {[1, 2, 3, 4, 5].map((num, index) => (
           <div
             key={num}
-            className={`mr-4 flex h-[100px] w-[100px] cursor-pointer flex-col items-center justify-center px-[15px] py-[10px] text-white transition duration-300 ${
+            className={`mr-4 flex cursor-pointer flex-col items-center justify-center px-[7px] py-[5px] text-white transition duration-300 last:mr-0 xxs:h-[45px] xxs:w-[45px] sm:h-[60px] sm:w-[60px] lg:h-[100px] lg:w-[100px] lg:px-[15px] lg:py-[10px] ${
               num === numRooms ? 'bg-xl-accent' : 'bg-[#D9D9D9]'
             }`}
             onClick={() => handleNumRoomsChange(num)}
           >
-            <span className='font-oswald text-[40px] font-light'>{num}</span>
-            <span className=' text-[18px] font-light'>
+            <span className='font-oswald text-[16px] font-light sm:text-[20px] lg:text-[40px]'>
+              {num}
+            </span>
+            <span className='text-[9px] font-light sm:text-[12px] lg:text-[18px]'>
               Комнат{index === 0 && 'а'}
               {index === 1 && 'ы'}
               {index === 2 && 'ы'}
@@ -81,13 +83,13 @@ const Calculator: FC = () => {
           style={{
             backgroundImage: `url("/XLPipeCalculator/${numRooms}room.svg")`
           }}
-          className={`relative mx-auto flex h-[666px] w-[621px] flex-col border-2 border-xl-accent bg-no-repeat`}
+          className={`relative mx-auto flex h-[240px] w-[225px] flex-col border-2 border-xl-accent bg-cover bg-no-repeat sm:h-[370px] sm:w-[350px] lg:h-[666px] lg:w-[621px]`}
         >
           {[...Array(numRooms)].map((_, index) => (
             <div
               key={index}
               id={`calcInput_${index + 1}`}
-              className='absolute mb-4 flex flex-col'
+              className='absolute flex flex-col items-center justify-center gap-0.5 -space-y-2 md:mb-4 lg:space-y-0'
             >
               <input
                 type='number'
@@ -96,18 +98,18 @@ const Calculator: FC = () => {
                 defaultValue={Math.floor(0).toFixed(1)}
                 min={0}
                 className={clsx(
-                  'relative h-[40px] w-[90px] border-[2px] border-[#7C3C82] pl-2.5 pr-1 text-center text-[18px] focus-visible:outline-xl-accent'
+                  'relative h-[25px] w-[40px] border border-[#7C3C82] pl-[0px] text-center text-[9px] focus-visible:outline-xl-accent sm:h-[30px] sm:w-[50px] sm:text-[12px] lg:h-[40px] lg:w-[90px] lg:border-[2px] lg:text-[18px]'
                 )}
                 onChange={e => handleAreaChange(index, e.target.value)}
               />
               <div>
                 <label
                   htmlFor={`room-${index + 1}`}
-                  className='text-[18px] text-xl-accent'
+                  className='text-[9px] font-medium text-xl-accent sm:text-[10px] md:text-[12px] lg:text-base'
                 >
                   Комната {index + 1}
                 </label>
-                <span className='absolute top-[9px] right-[16px] ml-1'>
+                <span className='absolute top-[7px] left-[27px] ml-1 text-[8px] sm:top-[10px] sm:left-[32px] sm:text-[9px] md:left-[38px] lg:top-[9px] lg:left-[56px] lg:text-base'>
                   м<sup>2</sup>
                 </span>
               </div>

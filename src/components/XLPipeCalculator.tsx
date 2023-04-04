@@ -9,16 +9,16 @@ export const XLPipeCalculator = () => {
         // id={'XLPipeCalculatorSection'}
         className='relative z-[5] w-full bg-xl-bg'
       >
-        <div className='relative z-[5] h-[1130px] w-full bg-xl-bg pt-16'>
+        <div className='relative z-[5] h-[680px] w-full bg-xl-bg px-[15px] pt-16 lg:h-[1130px] lg:px-[60px]'>
           <div
             id={'XLPipeCalculatorSection'}
             style={{ transformStyle: 'preserve-3d' }}
-            className='xlMagic relative mx-auto h-full bg-[white] pt-8 xl:max-w-[1128px]'
+            className='lg:xlMagic relative mx-auto h-full bg-[white] px-2 pt-8 xl:max-w-[1128px]'
           >
-            <h2 className='text-center font-oswald text-[40px] font-light text-xl-accent'>
+            <h2 className='text-center font-oswald text-[24px] font-light text-xl-accent lg:text-[40px]'>
               Расчет стоимости отопления на калькуляторе
             </h2>
-            <h3 className='mx-auto mt-5 max-w-[725px] text-center text-[16px] text-space-gray'>
+            <h3 className='mx-auto mt-5 max-w-[725px] text-center text-[12px] text-space-gray lg:text-[16px]'>
               Сделаем расчет отопления от систем XL PIPE быстро и бесплатно, с
               учетом индивидуальных параметров объекта. Для этого заполните
               указанные ниже поля и отправьте заявку на расчет.

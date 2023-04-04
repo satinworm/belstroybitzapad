@@ -19,10 +19,13 @@ export const Footer = () => {
         (isPipePage || isElectricPage) && '!bg-white'
       )}
     >
-      <div className='relative flex flex-col justify-between pb-7 pt-12 lg:container lg:flex-row lg:px-5 lg:pt-16'>
+      <div className='relative flex flex-col items-center justify-between pb-7 pt-12 lg:container lg:flex-row lg:px-5 lg:pt-16'>
         <div className='w-full px-2 pb-14 lg:w-1/3 lg:px-0'>
           {!isPipePage && !isHeaterPage && (
-            <div className='absolute top-5 left-1 flex items-center lg:-left-4'>
+            <div
+              id='footerContacts'
+              className='absolute top-5 left-1 flex items-center lg:-left-4'
+            >
               <h2
                 className={clsx(
                   'z-[40] text-4xl font-bold uppercase text-white/5 lg:text-7xl',
@@ -40,7 +43,7 @@ export const Footer = () => {
           <div
             className={clsx(
               'flex flex-col text-2xl text-[#E8E8E8] lg:mt-12 lg:gap-5',
-              isPipePage && 'text-xl-accent',
+              isPipePage && 'text-[#7C3C82]',
               isElectricPage && 'text-[#000001]'
             )}
           >
@@ -126,7 +129,7 @@ export const Footer = () => {
           height='400'
           // frameBorder='1'
           allowFullScreen={true}
-          className='w-screen lg:w-2/3'
+          className='w-screen lg:h-[300px] lg:w-2/3'
         />
       </div>
     </footer>

@@ -17,7 +17,10 @@ export const MainPageAboutSection = () => {
           className='-translate-y-2/3'
         />
         <div className='py-[30px] pl-[30px] lg:p-[100px]'>
-          <div className='ml-auto bg-white/80 p-2 text-[11px] text-black lg:w-2/3 lg:p-5 lg:text-lg'>
+          <div
+            id='aboutText'
+            className='ml-auto bg-white/80 p-2 text-[11px] text-black md:text-base lg:w-2/3 lg:p-5 lg:text-lg'
+          >
             Компания ООО «Белстройбитзапад» основана в 2006 году как
             организация, основной сферой деятельности которой является
             строительство жилых, офисных, торговых зданий.

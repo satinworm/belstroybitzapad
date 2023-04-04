@@ -48,7 +48,7 @@ export const HeaterAdvantagesSection = () => {
         <h2 className='text-center font-oswald text-3xl font-light tracking-[-0.035em]'>
           Преимущества керамогранитных обогревателей
         </h2>
-        <div className='grid grid-cols-3 place-items-baseline gap-5'>
+        <div className='grid grid-cols-3 place-items-baseline gap-5 px-5'>
           {arr.map((item, index) => (
             <div key={index} className='mt-[50px] flex gap-1.5'>
               <div className='h-[70px] w-[70px] bg-accent text-right font-oswald text-[80px] font-light leading-[70px] text-white'>

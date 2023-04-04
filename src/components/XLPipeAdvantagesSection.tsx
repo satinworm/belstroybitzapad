@@ -22,11 +22,11 @@ const advantages = [
 export const XLPipeAdvantagesSection = () => {
   return (
     <section className='bg-xl-bg'>
-      <div className='container py-32'>
+      <div className='container py-16 md:py-32'>
         <h2 className='xlHeading'>
           Корейские технологии – залог высокого качества
         </h2>
-        <div className='mt-16 grid grid-cols-3 gap-16'>
+        <div className='mt-16 grid grid-cols-1 gap-8 px-[15px] md:gap-16 lg:grid-cols-3 lg:px-3'>
           {advantages.map((advantage, index) => (
             <div key={advantage.id} className='flex flex-col'>
               <div className='flex h-max items-center justify-between border-b border-b-xl-accent py-4 text-xl-accent'>

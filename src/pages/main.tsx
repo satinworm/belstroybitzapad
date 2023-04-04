@@ -7,11 +7,14 @@ import { MainPagePhoneSection } from '../components/MainPagePhoneSection'
 import { MainPageAdvantagesSection } from '../components/MainPageAdvantagesSection'
 import { MainPageCanvas } from '../components/MainPageCanvas'
 import { useEffect } from 'react'
+import { MainPageCanvasMobile } from '../components/MainPageCanvasMobile'
 
 export const MainPage = () => {
+  const isMobile = window.innerWidth < 768
   return (
     <>
-      {/*<MainPageCanvas />*/}
+      <MainPageCanvasMobile />
+      <MainPageCanvas />
       <MainPageMainSection />
       <MainPageServicesSection />
       <MainPageAboutSection />

@@ -101,14 +101,14 @@ export const ElectricianPageServicesSection = () => {
       <section className='container' id='electricServicesSection'>
         <ElectricianPageHeading
           title='Services'
-          subtitle='Услуги электрика в Гродно и Гродненской области'
+          subtitle='Услуги электрика в Гродно'
           number='01'
           position='left'
           id='electricServicesHeading'
         />
         <ul
           id={'electricServiceList'}
-          className='mt-28 grid grid-cols-2 gap-8 lg:grid-cols-4'
+          className='mt-4 grid grid-cols-2 gap-[12px] px-[10px] sm:gap-5 md:mt-4 lg:mt-20 lg:grid-cols-4 lg:gap-5'
         >
           {services.map(service => (
             <ServiceListed

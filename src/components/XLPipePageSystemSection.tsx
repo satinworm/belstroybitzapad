@@ -67,19 +67,25 @@ export const XLPipePageSystemSection = () => {
     <>
       <section id='XLPipePageSystemSection' className='bg-xl-bg'>
         <div className='container pt-20 '>
-          <h2 className='xlHeading mb-10'>Как выглядит система XL PIPE</h2>
-          <div className='flex items-center justify-end gap-12'>
-            <div className='mr-[52px] flex flex-col'>
-              {pipes.map(pipe => (
-                <XlPipe key={pipe.id} {...pipe} />
-              ))}
+          <h2 className='xlHeading mb-10 text-3xl md:text-4xl'>
+            Как выглядит система XL PIPE
+          </h2>
+          <div className='flex flex-col items-center justify-center md:justify-end md:gap-12 lg:flex-row'>
+            <div className='flex justify-center'>
+              <div className='relative flex flex-col justify-end gap-2 md:mr-[52px] md:block md:justify-center'>
+                {pipes.map(pipe => (
+                  <XlPipe key={pipe.id} {...pipe} />
+                ))}
+              </div>
+              <div className='z-[39] mt-auto flex'>
+                <img src='/girl.png' className='' alt='girl' />
+              </div>
             </div>
-            <div className='z-[40] mt-auto flex'>
-              <img src='/girl.png' alt='girl' />
-            </div>
-            <div className='z-30 w-full max-w-[515px] max-w-lg border border-xl-accent bg-white py-6 px-12'>
-              <h2 className='xlHeading'>Система XL PIPE</h2>
-              <div className='mt-[50px] text-left text-[18px]'>
+            <div className='z-30 mt-[40px] w-full max-w-[360px] border border-xl-accent bg-white py-3 px-6 md:mt-0 md:max-w-lg md:py-6 md:px-12'>
+              <h2 className='xlHeading text-3xl md:text-4xl'>
+                Система XL PIPE
+              </h2>
+              <div className='mt-[20px] text-left text-[12px] md:mt-[50px] md:text-[15px] lg:text-[18px]'>
                 Представляет собой трубу диаметром 20 мм из полиэтилена высокой
                 прочности с жидкостью и греющим кабелем внутри. <br />
                 <br /> Поставляется в готовом виде: 9 моделей длиной от 7 до 84
@@ -89,7 +95,7 @@ export const XLPipePageSystemSection = () => {
                 можно монтировать несколько систем.
               </div>
               <button
-                className='button xlButton mx-auto mt-6 block'
+                className='button xlButton mx-auto mt-6 block min-w-[200px] text-[14px] md:min-w-[300px] md:text-[16px]'
                 type='submit'
                 onClick={() => setIsModalOpen(true)}
               >

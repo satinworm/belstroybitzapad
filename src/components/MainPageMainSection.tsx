@@ -14,17 +14,17 @@ export const MainPageMainSection = () => {
       </div>
       <div className='absolute top-1/2 right-0 w-full -translate-y-1/2 text-right'>
         <div className='container px-[15px]'>
-          <h1 className='ml-auto max-w-[900px] font-oswald text-[40px] font-extralight tracking-[-0.035em] text-white lg:text-[100px] lg:leading-[148px]'>
+          <h1 className='ml-auto max-w-[900px] font-oswald text-[40px] font-extralight tracking-[-0.035em] text-white md:text-[60px] lg:text-[100px] lg:leading-[148px]'>
             Добро пожаловать на сайт БелстройбитЗапад
           </h1>
-          <span className='mt-2 text-[10px] font-medium text-accent lg:text-xl'>
+          <span className='mt-2 text-[10px] font-medium text-accent md:text-[12px] lg:text-xl'>
             Фундамент вашей мечты
           </span>
         </div>
       </div>
       <div className='absolute left-0 bottom-0 w-full translate-y-1/2'>
         <div className='container'>
-          <div className='main-advantages grid w-full grid-cols-2 gap-[5px] border border-black bg-white px-[10px] py-[20px] text-[9.5px] lg:grid-cols-4 lg:gap-10 lg:px-10 lg:py-10 lg:text-sm'>
+          <div className='main-advantages grid w-full grid-cols-2 gap-[5px] border border-black bg-white px-[10px] py-[20px] text-[9.5px] md:text-[12px] lg:grid-cols-4 lg:gap-10 lg:px-10 lg:py-10 lg:text-sm'>
             <div>
               <img src='/icons/checkbox.svg' alt='checkbox' />
               <span>Специалисты с большим опытом работы 8+ лет</span>
@@ -43,8 +43,7 @@ export const MainPageMainSection = () => {
             <div>
               <img src='/icons/checkbox.svg' alt='checkbox' />
               <span>
-                Схема составляется технологом. Цена фиксируется в договоре на
-                все время выполняемой услуги
+                Цена фиксируется в договоре на все время выполняемой услуги
               </span>
             </div>
           </div>

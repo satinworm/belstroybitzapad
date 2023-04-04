@@ -20,7 +20,7 @@ export const XLPipePageMainSection = () => {
 
   return (
     <>
-      <section className='relative h-[93vh] bg-xl-pipe-bg bg-cover bg-no-repeat'>
+      <section className='relative h-[300px] bg-xl-pipe-mobile-bg bg-cover bg-no-repeat sm:h-[400px] sm:bg-xl-pipe-bg lg:h-screen xl:h-[93vh]'>
         <div className='main-links absolute top-1/2 left-8 z-10 hidden -translate-y-1/2 flex-col gap-8 lg:flex'>
           <a href='#'>
             <img src='/icons/facebook.svg' alt='facebook' />
@@ -32,13 +32,13 @@ export const XLPipePageMainSection = () => {
             <img src='/icons/vk.svg' alt='vk' />
           </a>
         </div>
-        <div className='absolute top-1/2 right-0 w-full -translate-y-1/2 text-right'>
-          <div className='container flex items-end'>
+        <div className='absolute right-0 top-1/3 w-full px-3 text-right sm:top-1/3 md:px-0 lg:top-1/2 lg:-translate-y-1/2'>
+          <div className='container flex flex-col-reverse items-end sm:px-4 md:flex-row md:gap-6'>
             <form
-              className='ml-16 flex w-full max-w-[300px] flex-col gap-3'
+              className='ml-16 mt-12 flex w-full flex-col gap-3 lg:mt-0 lg:max-w-[300px]'
               onSubmit={handleSubmit(onSubmit)}
             >
-              <div className='mt-10 text-dark-gray'>
+              <div className='mt-10 hidden text-dark-gray md:block'>
                 <input
                   type='text'
                   placeholder='Ваш телефон'
@@ -47,14 +47,21 @@ export const XLPipePageMainSection = () => {
                 />
               </div>
               <button
-                className='xlButton button w-full'
+                className='xlButton button hidden w-full md:block'
+                id='phoneButton'
+                type='submit'
+              >
+                Получите консультацию
+              </button>
+              <button
+                className='xlButton button w-full py-2 md:hidden'
                 id='phoneButton'
                 type='submit'
               >
                 Получите консультацию
               </button>
             </form>
-            <h1 className='ml-auto max-w-[860px] font-oswald text-2xl font-extralight leading-tight tracking-[-0.035em] text-white  lg:text-[96px]'>
+            <h1 className='ml-auto font-oswald text-3xl font-extralight leading-tight tracking-[-0.035em] text-white sm:max-w-[460px] md:text-[34px] lg:max-w-[860px]  lg:text-[54px] xl:text-[96px]'>
               Основное отопление дома от электро-водяного пола XL PIPE всего за
               3 дня без котла и радиаторов
             </h1>

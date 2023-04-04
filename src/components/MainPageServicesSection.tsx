@@ -110,7 +110,7 @@ const services = [
       'Каждый заказчик должен осуществить свою мечту и реализовать все свои желания в продукте, который будет соответствовать его собственному образу жизни, предоставит ему максимальный простор и безупречно организованное пространство для деятельности. Мы поможем вам сделать это.',
 
     image: '/works/plitka-raboty.svg',
-    shortDescription: 'Ландшафтный дизайн тратуарной плитки',
+    shortDescription: '',
     prices: ['Цена от 9999$']
   }
 ]
@@ -143,7 +143,7 @@ export const MainPageServicesSection = () => {
           position='left'
           id='servicesHeading'
         />
-        <ul className='mt-10 grid grid-cols-2 gap-[12px] px-[10px] lg:grid-cols-4 lg:gap-8'>
+        <ul className='mt-10 grid grid-cols-2 gap-[12px] px-[10px] sm:gap-5 lg:grid-cols-4 lg:gap-5'>
           {services.map(service => (
             <ServiceListed
               {...service}

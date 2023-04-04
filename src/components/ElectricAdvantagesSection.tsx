@@ -21,12 +21,12 @@ const advantages = [
 
 export const ElectricAdvantagesSection = () => {
   return (
-    <section className='bg-[#F5F5F5]'>
+    <section className='bg-white'>
       <div className='container pt-[80px] pb-[100px]'>
-        <h2 className='electricianHeading'>
+        <h2 className='electricianHeading text-[36px] md:text-[40px]'>
           Преимущества, за которые клиенты выбирают нас
         </h2>
-        <div className='mt-16 grid grid-cols-3 gap-16'>
+        <div className='mt-16 grid grid-cols-1 gap-8 px-[15px] md:gap-16 lg:grid-cols-3 lg:px-3'>
           {advantages.map((advantage, index) => (
             <div key={advantage.id} className='flex flex-col'>
               <div className='flex h-max items-center justify-between border-b border-b-electrician-accent py-4 text-electrician-accent'>

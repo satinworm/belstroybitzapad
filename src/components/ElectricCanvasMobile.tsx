@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { drawLine, getOffset } from '../utils/canvas'
 
-export const ElectricCanvas = () => {
+export const ElectricCanvasMobile = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -119,25 +119,23 @@ export const ElectricCanvas = () => {
           '#FCD638',
           2
         )
-
-        // service list
         drawLine(
           ctx,
           [
-            electricAboutSectionOffset.right - 232.5,
-            electricAboutSectionOffset.top + 95
+            electricAboutSectionOffset.right - 42,
+            electricAboutSectionOffset.top + 80
           ],
           [
-            electricAboutSectionOffset.right - 232.5,
+            electricAboutSectionOffset.right - 42,
             electricAboutSectionOffset.top - 970
           ],
           '#141817',
-          8.5
+          5
         )
         drawLine(
           ctx,
           [
-            electricAboutSectionOffset.right - 228.1,
+            electricAboutSectionOffset.right - 42,
             electricAboutSectionOffset.top - 970
           ],
           [
@@ -174,7 +172,7 @@ export const ElectricCanvas = () => {
   return (
     <canvas
       ref={canvasRef}
-      className='pointer-events-none absolute top-0 left-0 z-[1] hidden lg:block'
+      className='pointer-events-none absolute top-0 left-0 z-[1] md:hidden lg:hidden'
     />
   )
 }

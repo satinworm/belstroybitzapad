@@ -6,6 +6,9 @@ import clsx from 'clsx'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Services } from '../components/Services'
 import { ServicesBurgerMenu } from '../components/ServicesBurgerMenu'
+import { useLocation } from 'react-router-dom'
+import { BurgerMenuXLPipe } from './BurgerMenuXLPipe'
+import { BurgerMenuElectric } from './BurgerMenuElectric'
 
 const links = [
   { title: 'Акции', target: '' },
@@ -16,6 +19,13 @@ const links = [
 ]
 const SideMenu: FC = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const location = useLocation()
+  const isMainPage = location.pathname === '/'
+  const isPipePage = location.pathname.includes('electrical-works/xl-pipe')
+  const isElectricPage = location.pathname.includes(
+    'electrical-works/ElectricianServices'
+  )
+  const isHeaterPage = location.pathname.includes('electrical-works/Heaters')
 
   const handleClick = () => {
     setIsOpen(!isOpen)
@@ -145,7 +155,10 @@ const SideMenu: FC = () => {
           className='fixed top-0 right-0 mt-[15px] mr-[15px] text-white'
           onClick={handleClick}
         >
-          <BurgerMenu width={36} height={36} />
+          {isMainPage && <BurgerMenu width={36} height={36} />}
+          {isPipePage && <BurgerMenuXLPipe width={36} height={36} />}
+          {isElectricPage && <BurgerMenuElectric width={36} height={36} />}
+          {isHeaterPage && <BurgerMenuElectric width={36} height={36} />}
         </button>
       )}
     </div>

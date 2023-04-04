@@ -17,10 +17,10 @@ export const MainPageHeading = (props: Props) => {
     <div
       id={id}
       className={clsx(
-        'relative flex w-fit items-center gap-2',
+        'relative flex w-fit items-center gap-2 px-[5px]',
         position === 'right'
-          ? 'right-4 ml-auto flex-row-reverse lg:-right-10'
-          : 'ml-none left-[0.5rem] flex-row lg:-left-10',
+          ? '-right-[0px] ml-auto flex-row-reverse sm:-right-4 md:-right-0 lg:-right-10'
+          : 'ml-none -left-[0px] flex-row sm:-left-4 ',
         className
       )}
     >

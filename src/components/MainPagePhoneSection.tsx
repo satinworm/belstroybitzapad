@@ -24,13 +24,14 @@ export const MainPagePhoneSection = () => {
     <>
       <section className='container mt-[60px] lg:mt-[90px]' id='phoneSection'>
         <div className='flex w-full flex-col justify-between lg:flex-row'>
-          <div className='w-full p-3 text-black lg:w-1/2 lg:p-20 '>
+          <div className=' w-full p-8 text-black lg:w-1/2 lg:p-20 '>
             <h2
               className='w-fit whitespace-nowrap text-xl font-semibold lg:mb-10 lg:text-3xl'
               id='phoneHeading'
             >
               Понравились наши работы ?
             </h2>
+
             <div className='mt-2 lg:mt-0'>
               Для получения консультации достаточно лишь перейти в{' '}
               <span className='font-medium'>телеграм</span> или{' '}
@@ -55,7 +56,7 @@ export const MainPagePhoneSection = () => {
                 <MainPageBoxNumber
                   number='05'
                   id='phoneNumber'
-                  className='absolute left-0 top-[5rem]  mr-0 -translate-x-10'
+                  className='absolute left-0 top-[3rem] mr-0 hidden -translate-x-10 lg:block'
                 />
                 <img
                   src='/phone.svg'
@@ -82,7 +83,7 @@ export const MainPagePhoneSection = () => {
                 />
               </div>
               <button
-                className='primaryButton button w-full py-2 text-sm'
+                className='primaryButton button z-50 w-full py-2 text-sm'
                 id='phoneButton'
                 type='submit'
               >
@@ -100,14 +101,14 @@ export const MainPagePhoneSection = () => {
             <div className='relative'>
               <MainPageBoxNumber
                 number='05'
-                id='phoneNumber'
-                className='absolute left-0 top-[5rem]  mr-0 -translate-x-10'
+                id='phoneNumber2'
+                className='absolute left-0 top-[45px] mr-0  -translate-x-10 2xl:top-[5rem]'
               />
               <img
                 src='/phone.svg'
                 className='hidden lg:block'
                 alt='phone'
-                id='phoneContainer'
+                id='phoneContainer2'
               />
             </div>
           </div>
